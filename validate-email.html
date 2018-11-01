@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <input type=text id="emailInput">
+  <p id="emailOutput"></p>
+
+  <script src="lib/validate-email.js"></script>
+  <script>
+
+    $("#emailInput").keyup(function() {
+      validateEmail($("#emailInput").val()) ? 
+      $("#emailOutput").text('That is an email').css("color", "green") && $("#emailInput").css("border", "2px solid green") : 
+      $("#emailOutput").text('That is not an email').css("color", "red") && $("#emailInput").css("border", "2px solid red")
+    })
+
+  </script>
+
+</body>
+</html>
